@@ -1,14 +1,8 @@
 <template>
-  <div class="container">
     <div class="calc-body">
-    
-    <display />
-    <keyboard />
+      <display />
+      <keyboard />
     </div>
-    <h1>{{operation}}</h1>
-    <h1>{{input}}</h1>
-    <h1>{{operate}}</h1>
-  </div>
 </template>
 
 <script>
@@ -39,17 +33,11 @@ body{
   color: white;
   font-family: 'Segoe UI',sans-serif;
 }
-.container{
-  width: auto;
-  margin: 10% auto;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
   .calc-body{
+    margin: 10% auto;
     color: black;
     width: 525px;
     background: #f2f2f2;
   }
-}
 
 </style>
