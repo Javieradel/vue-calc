@@ -1,26 +1,55 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <div class="calc-body">
+    
+    <display />
+    <keyboard />
+    </div>
+    <h1>{{operation}}</h1>
+    <h1>{{input}}</h1>
+    <h1>{{operate}}</h1>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import display from '@/components/display.vue'
+import keyboard from '@/components/keyboard'
+import store from '@/store'
+import {computed} from 'vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    display,
+    keyboard,
+  },
+  setup(){
+  
+    return {
+      operation: computed(()=> store.state.operation),
+      input: computed(()=> store.state.input),
+      operate: computed(()=> store.state.resolve),
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+body{
+  background-color: #001;
+  color: white;
+  font-family: 'Segoe UI',sans-serif;
 }
+.container{
+  width: auto;
+  margin: 10% auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  .calc-body{
+    color: black;
+    width: 525px;
+    background: #f2f2f2;
+  }
+}
+
 </style>
