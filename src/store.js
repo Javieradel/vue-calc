@@ -28,6 +28,11 @@ const store = createStore({
   getters: {
     currentResult(state){
       return eval(state.input)
+    },
+    currentOperation(state){
+     let newOperation = state.input.replace('/','÷');
+     newOperation = newOperation.replace('*','x')
+     return newOperation;
     }
   }
 

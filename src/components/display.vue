@@ -18,7 +18,7 @@ export default defineComponent({
     
     
     const currentResult = computed(()=> store.getters.currentResult)
-    const currentOperation = computed(()=> store.state.input)
+    const currentOperation = computed(()=> store.getters.currentOperation)
     return {
       currentOperation,
       currentResult
@@ -32,7 +32,7 @@ export default defineComponent({
     margin: 0;
     padding: 10px 10px;
     .current-operation{
-      min-height: 3.1rem;
+      height: 3.5rem;
       text-align: right;
       font-size: 3rem;
       overflow-x: scroll;
@@ -46,7 +46,7 @@ export default defineComponent({
       text-align: right;
       font-size: 2rem;
       overflow-x: scroll;
-      min-height: 2.1rem;
+      height: 3rem;
       scrollbar-width: none;
       -ms-overflow-style: none;
       &::-webkit-scrollbar{
